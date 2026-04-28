@@ -1,0 +1,3 @@
+# Scholar-Essentials
+
+Initializing...

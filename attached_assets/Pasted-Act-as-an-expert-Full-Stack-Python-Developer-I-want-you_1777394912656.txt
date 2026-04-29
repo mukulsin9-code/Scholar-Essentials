@@ -1,0 +1,30 @@
+Act as an expert Full-Stack Python Developer. I want you to build a complete web application called "Scholars Essentials". This platform will allow students to buy/sell essentials (like books) and find local PG (Paying Guest) accommodations. 
+
+Please generate the complete codebase, including the frontend and backend, adhering strictly to the following requirements:
+
+### 1. Tech Stack
+* Backend Framework: Python (Django preferred, but Flask is acceptable if it better suits the environment).
+* Database: MySQL (Use SQLAlchemy or Django ORM to define the schema). 
+* Frontend: HTML5, CSS3, JavaScript. Use Bootstrap or Tailwind CSS for a clean, modern, mobile-responsive UI.
+* Map Integration: Use Leaflet.js (with OpenStreetMap data) for the frontend map so we do not need a paid API key.
+
+### 2. Database Schema (MySQL)
+Create the following tables/models with appropriate relationships:
+* Users: id, username, email, password_hash, user_type (student/owner), latitude, longitude.
+* Items (Books/Essentials): id, seller_id (foreign key to Users), title, description, price, condition.
+* Accommodations (PGs): id, owner_id (foreign key to Users), name, address, monthly_rent, latitude, longitude.
+
+### 3. Backend Features Required
+* User Authentication: Implement secure user registration, login, and logout functionality. Passwords must be hashed.
+* CRUD Operations: Users should be able to Create, Read, Update, and Delete their own item listings and PG listings.
+* Map API Endpoint: Create an endpoint (e.g., `/api/locations`) that returns the latitude, longitude, and details of all PG accommodations in JSON format so the frontend map can read it.
+
+### 4. Frontend Features Required
+* Navigation: A clean navbar with links to Home, Browse Essentials, Browse PGs, Login/Register, and Dashboard.
+* Map View: A dedicated page featuring a large interactive Leaflet.js map. It should plot markers for all available PG accommodations. Clicking a marker should show a popup with the PG name and rent.
+* Dashboard: A protected route where logged-in users can manage their listings and update their profile.
+
+### 5. Execution Instructions
+* Write all necessary configuration files, including `requirements.txt`.
+* Ensure the database connection strings are set up to accept environment variables for MySQL credentials.
+* Provide a brief README string or comments at the top of the main file explaining how to run the application and initialize the MySQL database schema.

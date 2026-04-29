@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Scholars Essentials"
+version = "1.0.0"
+id = "artifacts/scholars-essentials"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23370
+
+[services.development]
+run = "pnpm --filter @workspace/scholars-essentials run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/scholars-essentials", "run", "build" ]
+publicDir = "artifacts/scholars-essentials/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23370"
+BASE_PATH = "/"

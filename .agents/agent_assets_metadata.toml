@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "wmvPAkwJz9Sv2MkJsj-BN"
+uri = "file://artifacts/scholars-essentials/public/hero-noticeboard.png"
+type = "image"
+title = "College campus noticeboard"
